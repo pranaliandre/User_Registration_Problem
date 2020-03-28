@@ -5,7 +5,7 @@ echo "Welcome to User Registration"
 #Regex pattern for first name 
 namePattern="([A-Z]{1}[a-z]{2}$)"
 #regex pattern for email address
-emailPattern="abc((\.[A-Z]+[a-z]*[0-9]*)|(\.[A-Z]*[a-z]+[0-9]*)|(\.[A-Z]*[a-z]*[0-9]+)|^)?@bl\.co(\.[a-z]+){1,}"
+emailPattern="^([a-zA-Z]{3,}([.|_|+|-]?[a-zA-Z0-9]+)?[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.]?[a-zA-Z]{2,3})?)$"
 #regex pattern for mobile number
 numberPattern="^([0-9]{2}[ ]{1}[0-9]{10})$"
 

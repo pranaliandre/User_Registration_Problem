@@ -1,5 +1,6 @@
 #!/bin/bash -x
 shopt -s extglob
+
 echo "Welcome to User Registration"
 #Regex patteren for first name 
 namePattern="([A-Z]{1}[a-z]{2}$)"

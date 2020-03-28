@@ -1,3 +1,4 @@
+
 #!/bin/bash -x
 shopt -s extglob
 
@@ -8,8 +9,8 @@ namePattern="([A-Z]{1}[a-z]{2}$)"
 emailPattern="abc((\.[A-Z]+[a-z]*[0-9]*)|(\.[A-Z]*[a-z]+[0-9]*)|(\.[A-Z]*[a-z]*[0-9]+)|^)?@bl\.co(\.[a-z]+){1,}"
 #regex pattern for mobile number
 numberPattern="^([0-9]{2}[ ]{1}[0-9]{10})$"
-#regex pattern forminimum 8 charachter password
-passwordPattern="[a-z]{8,}" 
+#regex pattern for minimum 8 charachter password
+passwordPattern="^[a-zA-Z0-9]*(.*[A-Z].*{1}+)[a-zA-Z0-9]*{7,40}$"
 
 #it take input from user first name
 read -p "Enter the first name: " firstName
@@ -26,7 +27,7 @@ read -p "Enter the password: " passwordChar
 function validationFirstName(){
 	if [[ $firstName =~ $namePattern ]]
 	then
-		echo "valid name"
+		echo "valid first name"
 	else
 		echo "invalid first name"
 	fi
@@ -50,7 +51,7 @@ function validationEmailAddress(){
 	then
 		echo "valid email Address"
 	else
-		echo "invalid"
+		echo "invalid email address"
 	fi
 }
 validationEmailAddress $emailAddress $emailPattern
@@ -67,8 +68,6 @@ function validationPassword(){
 validationPassword $passwordChar $passwordPattern
 
 #function of validation for mobile number
-#param mobile number
-# param regex pattern for mobile number
 function validationMobileNumber(){
 	if [[ $numberM =~ $numberPattern ]]
 	then
